@@ -1,0 +1,4 @@
+{
+"interval": 2,
+"desired_text": "gel gor beni ask neyledi"
+}

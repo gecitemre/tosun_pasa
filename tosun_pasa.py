@@ -9,10 +9,12 @@ import cv2
 pytesseract.tesseract_cmd = "Tesseract-OCR\\tesseract.exe"
 filterwarnings("ignore")
 
-indicator = input("indicator: ")  # "Student password:"
-interval = int(input("interval: "))
+with open("constants.txt", "r") as file:
+    dict = eval(file.read())
+    desired_text = dict["desired_text"]
+    interval = dict["interval"]
 
-while not indicator in pytesseract.image_to_string(
+while not desired_text in pytesseract.image_to_string(
     cv2.threshold(
         numpy.asarray(screenshot().convert("L")).astype(numpy.uint8),
         0,
@@ -21,4 +23,4 @@ while not indicator in pytesseract.image_to_string(
     )[1]
 ):
     sleep(interval)
-alert()
+alert("Desired text is on the screen!")
