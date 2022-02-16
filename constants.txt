@@ -1,4 +1,4 @@
 {
 "interval": 2,
-"desired_text": "gel gor beni ask neyledi"
+"desired_text": "indicator"
 }
